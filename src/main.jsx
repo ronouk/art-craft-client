@@ -16,6 +16,8 @@ import AddProduct from './components/pages/AddProduct';
 import EditProduct from './components/pages/EditProduct';
 import { HelmetProvider } from 'react-helmet-async';
 import CraftItemDetails from './components/pages/CraftItemDetails';
+import Register from './components/pages/Register';
+import SignIn from './components/pages/SignIn';
 
 export const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
       {
         path: "/craft-details/:id",
         element: <CraftItemDetails></CraftItemDetails>
+      },
+      {
+        path: "/register",
+        element: <Register></Register>
+      },
+      {
+        path: "/sign-in",
+        element: <SignIn></SignIn>
       }
     ],
   },

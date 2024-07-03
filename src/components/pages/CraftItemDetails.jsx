@@ -70,15 +70,15 @@ const CraftItemDetails = () => {
 
 
     return (
-        <div>
-            <div className="bg-gray-200 p-6 rounded-lg grid gap-2 h-full">
+        <div className="w-11/12 mx-auto mb-12">
+            <div className="bg-gray-200 p-12 rounded-lg grid gap-4 h-full">
 
                 <div className="">
                     <img className="h-full w-full bg-cover object-cover rounded-lg" src={image} alt="" />
                 </div>
 
                 <div className="">
-                    <h2 className="text-xl font-bold">{item_name}</h2>
+                    <h2 className="text-xl font-bold text-green-600 w-10/12">{item_name}</h2>
                     <p>{subcategory_name}</p>
                 </div>
 
@@ -99,7 +99,7 @@ const CraftItemDetails = () => {
                     <p>Customization possible: <span>{customization}</span></p>
                     <p>Processing time: <span>{processing_time}</span></p>
                 </div>
-                <div className="mx-auto mt-6">
+                <div className="mx-auto mt-6 flex gap-6">
                     <Link to={`/edit-craft/${_id}`} className="btn bg-gray-600 text-white hover:text-black">Edit Craft</Link>
                     {
                         !isLoading && (
