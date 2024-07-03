@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 
 const CraftItemsSection = ({ crafts }) => {
     return (
-        <div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {
-                crafts.map((craft, index) => <CraftItem key={index} craft={craft}></CraftItem>)
+                crafts.slice(0,9).map((craft, index) => <CraftItem key={index} craft={craft}></CraftItem>)
             }
+            
         </div>
     );
 };

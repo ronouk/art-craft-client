@@ -15,6 +15,9 @@ import Home from './components/pages/Home';
 import AddProduct from './components/pages/AddProduct';
 import EditProduct from './components/pages/EditProduct';
 import { HelmetProvider } from 'react-helmet-async';
+import CraftItemDetails from './components/pages/CraftItemDetails';
+
+export const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const router = createBrowserRouter([
   {
@@ -28,15 +31,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/all-crafts",
-        element: <AllItems />
+        element: <AllItems />,
+        loader: () => fetch(`${VITE_BACKEND_URL}/all-crafts/`)
       },
       {
         path: "/add-craft",
         element: <AddProduct></AddProduct>
       },
       {
-        path: "/edit-craft",
+        path: "/edit-craft/:id",
         element: <EditProduct />
+      },
+      {
+        path: "/craft-details/:id",
+        element: <CraftItemDetails></CraftItemDetails>
       }
     ],
   },
